@@ -1,0 +1,11 @@
+---
+
+# login information
+email: undef
+password: undef
+
+# which stores to watch ('item_id')
+item_list: []
+
+# how often to check for updates (in seconds)
+interval: 1800
