@@ -9,3 +9,9 @@ item_list: []
 
 # how often to check for updates (in seconds)
 interval: 1800
+
+# which telegram group to notify
+telegram_chat_id:
+
+# which telegram bot to use
+telegram_api_token:
