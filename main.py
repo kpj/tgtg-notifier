@@ -32,7 +32,11 @@ def main():
     import IPython; IPython.embed()
 
     # setup telegram bot
-    bot = TelegramBot(config['telegram_chat_id'], config['telegram_api_token'])
+    if config['telegram_chat_id'] is not None and config['telegram_api_token'] is not None:
+        bot = TelegramBot(config['telegram_chat_id'], config['telegram_api_token'])
+    else:
+        bot = None
+        print('No Telegram configuration given, will not send messages.')
 
     # check for news
     while True:
@@ -43,7 +47,8 @@ def main():
                 msg = format_message(item)
 
                 print(msg)
-                bot.announce(msg)
+                if bot is not None:
+                    bot.announce(msg)
 
             time.sleep(random.random())
 
