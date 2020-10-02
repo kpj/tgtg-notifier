@@ -26,11 +26,6 @@ def main():
     client = TGTGClient(config['email'], config['password'])
     client._login()
 
-    # df = client.get_items(latitude=None, longitude=None)
-    # print(df.head())
-
-    import IPython; IPython.embed()
-
     # setup telegram bot
     if config['telegram_chat_id'] is not None and config['telegram_api_token'] is not None:
         bot = TelegramBot(config['telegram_chat_id'], config['telegram_api_token'])
